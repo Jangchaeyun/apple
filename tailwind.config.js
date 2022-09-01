@@ -5,7 +5,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        body: ["Gowun Dodum", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 }
