@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ["Gowun Dodum", "sans-serif"],
+        body: ["Noto Sans KR", "sans-serif"],
       },
     },
   },
