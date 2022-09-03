@@ -32,7 +32,7 @@ function Header() {
         <a className="headerLink">비지니스</a>
       </div>
       <div className="flex items-center jusitify-center gap-x-4 md:w-1/5">
-        <SearchIcon className="headerIcon"/>
+        <SearchIcon className="headerIcon" />
         <Link href="/checkout">
           <div className='relative cursor-pointer'>
             <span className='absolute -right-1 -top-1 z-50 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-pink-500 to-violet-500
