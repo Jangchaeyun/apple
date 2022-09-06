@@ -29,6 +29,7 @@ const Home = ({ categories, products }: Props) => {
       </Head>
 
       <Header/>
+      
       <main className='relative h-[200vh] bg-[#E7ECEE]'>
         <Landing/>
       </main>
