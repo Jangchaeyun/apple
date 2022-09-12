@@ -53,9 +53,9 @@ function Success({ products } : Props) {
                     </div>
                 </Link>
             </header>
-            <main>
+            <main className='grid grid-cols-1 lg:grid-cols-9'>
                 <section
-                    className='order-2 mx-auto max-w-xl pb-12 lg:mx-0 lg:max-w-none lg:pr-16 lg:pt-16 xl:pl-16 2xl:pl-44'>
+                    className='order-2 mx-auto max-w-xl pb-12 lg:col-span-5 lg:mx-0 lg:max-w-none lg:pr-16 lg:pt-16 xl:pl-16 2xl:pl-44'>
                     <Link href="/">
                         <div
                             className="relative ml-14 hidden h-24 w-12 cursor-pointer transition lg:inline-flex">
@@ -100,7 +100,7 @@ function Success({ products } : Props) {
                             이메일과 문자로 배송 및 배송 업데이트를 받게 됩니다.
                         </p>
                     </div>
-                    <div>
+                    <div className='mx-4 flex flex-col items-center justify-between text-sm lg:ml-14 lg:flex-row'>
                         <p className='hidden lg:inline'>도와드릴까요? 연락주세요</p>
                         {
                             mounted && (
@@ -119,7 +119,7 @@ function Success({ products } : Props) {
                 {
                     mounted && (
                         <section className="overflow-y-scroll border-y border-l border-gray-300 bg-[#FAFAFA] lg:order-2 lg:col-span-4 lg:h-screen lg:border-y-0">
-                            <div className={'w-full ${showOrderSummaryCondition && "border-b"} border-gray-300 text-sm lg:hi'}>
+                            <div className={`w-full ${showOrderSummaryCondition && "border-b"} border-gray-300 text-sm lg:hidden`}>
                                 <div className='mx-auto flex max-w-xl items-center justify-between px-4 py-6'>
                                     <button onClick={handleShowOrderSummary} className="flex items-center space-x-2">
                                         <ShoppingCartIcon className='h-6 w-6'/>
@@ -132,7 +132,7 @@ function Success({ products } : Props) {
                                     </button>
 
                                     <p className='text-xl font-medium text-black'>
-                                        <Currency quantity={subtotal + 20} />
+                                        <Currency quantity={subtotal + 0} />
                                     </p>
                                 </div>
                             </div>
