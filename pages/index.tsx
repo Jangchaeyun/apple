@@ -7,10 +7,13 @@ import { Tab } from '@headlessui/react'
 import { fetchCategories } from '../utils/fetchCategories';
 import { fetchProducts } from '../utils/fetchProducts'
 import Basket from '../components/Basket'
+import { getSession } from 'next-auth/react';
+import type { Session } from "next-auth";
 
 interface Props {
   categories: Category[];
   products: Product[];
+  session: Session | null;
 }
 
 const Home = ({ categories, products }: Props) => {
@@ -77,14 +80,16 @@ const Home = ({ categories, products }: Props) => {
 export default Home
 
 // Backend Code
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
   const categories = await fetchCategories();
   const products = await fetchProducts();
+  const session = await getSession(context);
   
   return {
     props: {
       categories,
       products,
+      session,
     },
   };
 };
