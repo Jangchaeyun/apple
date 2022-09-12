@@ -93,7 +93,7 @@ function Checkout() {
                     <div className='flex justify-between'>
                       <p>소계</p>
                       <p>
-                        <Currency quantity={basketTotal} currency="KRW" />
+                        <Currency quantity={basketTotal} currency="USD" />
                       </p>
                     </div>
                     <div className='flex justify-between'>
@@ -114,7 +114,7 @@ function Checkout() {
                   <div className='flex justify-between pt-4 text-xl font-semibold'>
                     <h4>총 금액</h4>
                     <h4>
-                      <Currency quantity={basketTotal} currency="KRW" />
+                      <Currency quantity={basketTotal} currency="USD" />
                     </h4>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ function Checkout() {
                         <span>매월 지불</span>
                         <span>애플 카드로</span>
                         <span>
-                          390,777원/월 연이율 0%에서<sup className='-top-1'>◊</sup>
+                          $283.94/월 연이율 0%에서<sup className='-top-1'>◊</sup>
                         </span>
                       </h4>
                       <Button title="Apple Card 월 할부로 결제" />
@@ -141,7 +141,7 @@ function Checkout() {
                       <h4 className="mb-4 flex flex-col text-xl font-semibold">
                         전액 지불
                         <span>
-                          <Currency quantity={basketTotal} currency="KRW" />
+                          <Currency quantity={basketTotal} currency="USD" />
                         </span>
                       </h4>
                       <Button

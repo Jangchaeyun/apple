@@ -18,7 +18,7 @@ export default async function handler(
         // This is the shape in which stripe expects the data to be
         const transformedItems = items.map((item) => ({
             price_data: {
-                currency: "krw",
+                currency: "usd",
                 product_data: {
                     name: item.title,
                     images: [urlFor(item.image[0]).url()]
@@ -27,6 +27,7 @@ export default async function handler(
             },
             quantity: 1
         }));
+
         try {
             // Create Checkout Sessions from body params
             const params: Stripe.Checkout.SessionCreateParams = {
@@ -59,6 +60,8 @@ export default async function handler(
         }
     } else {
         res.setHeader("Allow", "POST");
-        res.status(405).end("Method Not Allowed");
+        res
+            .status(405)
+            .end("Method Not Allowed");
     }
 }
